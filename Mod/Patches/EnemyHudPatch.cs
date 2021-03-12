@@ -14,6 +14,7 @@ namespace EnemySense.Patches {
 
 			//Gets the player's sneak skill level and adds it to the default max distance you can be away from creatures to be able to view their health bar.
 			if(Player.m_localPlayer != null && Player.m_localPlayer.GetSkills().m_skillData.ContainsKey(Skills.SkillType.Sneak)) {
+				
 				Skills.Skill value;
 				Player.m_localPlayer.GetSkills().m_skillData.TryGetValue(Skills.SkillType.Sneak, out value);
 				if(value != null) {
