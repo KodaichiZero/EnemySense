@@ -33,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mod.cs" />
+    <Compile Include="Patches\EnemyHudPatch.cs" />
     <Compile Include="Patches\FixedUpdatePatch.cs" />
     <Compile Include="Utils\PrefabGetter.cs" />
   </ItemGroup>
