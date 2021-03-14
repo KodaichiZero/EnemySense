@@ -25,8 +25,6 @@ namespace EnemySense.Patches {
 				Transform visualObject = UnityEngine.Object.Instantiate<Transform>(PrefabGetter.getPingVisual(), __instance.GetHeadPoint(), Quaternion.identity);
 				GameObject audioObject = UnityEngine.Object.Instantiate<GameObject>(PrefabGetter.getPingAudio(), __instance.GetHeadPoint(), Quaternion.identity);
 
-				Debug.Log("Player location: " + __instance.transform.position.ToString());
-
 				//Do the Get Creaturss.
 				List<Character> guysList = Character.GetAllCharacters();
 
