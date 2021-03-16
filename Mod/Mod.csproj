@@ -34,8 +34,10 @@
   <ItemGroup>
     <Compile Include="Mod.cs" />
     <Compile Include="Patches\SetWalkPatch.cs" />
+    <Compile Include="Patches\UpdateMapPatch.cs" />
     <Compile Include="Patches\TestShowPatch.cs" />
     <Compile Include="Patches\FixedUpdatePatch.cs" />
+    <Compile Include="Patches\UpdateEventPinPatch.cs" />
     <Compile Include="Utils\PrefabGetter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -44,7 +46,7 @@
     <ItemGroup>
       <ModDlls Include="$(OutputPath)*.dll" />
     </ItemGroup>
-    <Copy SourceFiles="@(ModDlls)" DestinationFolder="$(GameDir)BepInEx\plugins\$(ModName)\" />
+    <Copy SourceFiles="@(ModDlls)" DestinationFolder="$(GameDir)BepInEx\plugins\KodaichiMods\" />
   </Target>
   <!-- Prepare game for modding -->
   <Target Name="BeforeResolveReferences">
