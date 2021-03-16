@@ -16,7 +16,7 @@ namespace CreatureSense.Patches {
 
 		public static void Postfix(ref Player __instance) {
 			if(__instance == Player.m_localPlayer && __instance.TakeInput() && __instance.IsCrouching() && ZInput.GetButtonDown("ToggleWalk")) {
-				
+
 				//First we check if thep layer has enough Stamina to use the ping, if not we don't do it.
 				if(__instance.HaveStamina(staminaDrain.Value)) {
 					__instance.UseStamina(staminaDrain.Value);

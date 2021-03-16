@@ -30,7 +30,7 @@ namespace CreatureSense.Utils {
 				GameObject fetch = ZNetScene.instance.GetPrefab("sfx_lootspawn");
 				pingAudio = UnityEngine.Object.Instantiate<GameObject>(fetch);
 				ZSFX audioModule = pingAudio.GetComponent<ZSFX>();
-				
+
 				//Adjusting the audio settings to give it some cool reverb.
 				audioModule.m_minPitch = 0.8F;
 				audioModule.m_maxPitch = 0.85F;

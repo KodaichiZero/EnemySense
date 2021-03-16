@@ -1,10 +1,6 @@
 ﻿using BepInEx.Configuration;
 using HarmonyLib;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace CreatureSense.Patches {
@@ -32,7 +28,7 @@ namespace CreatureSense.Patches {
 					if(character is Player) {
 						continue;
 					}
-					
+
 					bool flag = false;
 
 					foreach(Minimap.PinData pin in __instance.m_pins) {
