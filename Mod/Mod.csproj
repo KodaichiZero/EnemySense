@@ -34,7 +34,7 @@
   <ItemGroup>
     <Compile Include="Mod.cs" />
     <Compile Include="Patches\SetWalkPatch.cs" />
-    <Compile Include="Patches\TestShow.cs" />
+    <Compile Include="Patches\TestShowPatch.cs" />
     <Compile Include="Patches\FixedUpdatePatch.cs" />
     <Compile Include="Utils\PrefabGetter.cs" />
   </ItemGroup>

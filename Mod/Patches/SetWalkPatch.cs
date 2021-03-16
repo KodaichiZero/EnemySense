@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EnemySense.Patches {
+namespace CreatureSense.Patches {
 	[HarmonyPatch(typeof(Character), "SetWalk")]
 	public static class SetWalkPatch {
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
-namespace EnemySense.Utils {
+namespace CreatureSense.Utils {
 	public static class PrefabGetter {
 
 		private static Transform pingVisual;
