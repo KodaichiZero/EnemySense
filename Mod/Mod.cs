@@ -4,7 +4,7 @@ using HarmonyLib;
 using System.Linq;
 
 namespace CreatureSense {
-	[BepInPlugin("org.kodaichizero.creaturesense", "CreatureSense", "1.0.0.0")]
+	[BepInPlugin("KZ.CreatureSense", "CreatureSense", "1.0")]
 	public class Mod : BaseUnityPlugin {
 		private static readonly Harmony harmony = new(typeof(Mod).GetCustomAttributes(typeof(BepInPlugin), false)
 			.Cast<BepInPlugin>()
@@ -20,6 +20,7 @@ namespace CreatureSense {
 			FixedUpdatePatch.playAudio = base.Config.Bind<bool>("Features", "Audio Effect", true, "Play a shwimsical sound when using the ability. Can be heard by other players.");
 			UpdateEventPinPatch.showMinimapIcons = base.Config.Bind<bool>("Features", "Minimap Icons", true, "Show detected enemies on the minimap.");
 			UpdateMapPatch.allowAdditionalZoom = base.Config.Bind<bool>("Features", "Additional Zoom", true, "Lets you zoom in two additional steps on the minimap.");
+			FixedUpdatePatch.keyBind = base.Config.Bind<string>("Features", "Custom Keybind", "" , "For if you really don't like pressing C while crouching. Change the bind to something else. If you want to use a mouse key, include a space: mouse 3, for example. Valid inputs: https://docs.unity3d.com/ScriptReference/KeyCode.html");
 			harmony.PatchAll();
 		}
 
