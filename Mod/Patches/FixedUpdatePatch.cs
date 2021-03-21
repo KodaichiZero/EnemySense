@@ -16,6 +16,8 @@ namespace CreatureSense.Patches {
 		public static ConfigEntry<bool> playAudio;
 		public static ConfigEntry<string> keyBind;
 		public static bool invalidKey = false;
+		public static ConfigEntry<string> customMessage;
+		public static ConfigEntry<string> messageColor;
 
 		public static void Postfix(ref Player __instance) {
 			if(__instance == Player.m_localPlayer && __instance.TakeInput()) {
@@ -84,7 +86,12 @@ namespace CreatureSense.Patches {
 
 					//Show message about how many enemies are nearby.
 					if(showMessage.Value) {
-						__instance.Message(MessageHud.MessageType.Center, "<color=#bbddff>" + guysNum + " creature" + (guysNum == 1 ? "" : "s") + " found nearby.</color>");
+						if(customMessage.Value.Length > 0) {
+							string newMessage = new string(customMessage.Value.Replace("#", guysNum.ToString()).ToCharArray());
+							__instance.Message(MessageHud.MessageType.Center, "<color=" + messageColor.Value + ">" + newMessage + "</color>");
+						} else {
+							__instance.Message(MessageHud.MessageType.Center, "<color=" + messageColor.Value + ">" + guysNum + " creature" + (guysNum == 1 ? "" : "s") + " found nearby.</color>");
+						}
 					}
 				}
 			}

@@ -21,6 +21,8 @@ namespace CreatureSense {
 			UpdateEventPinPatch.showMinimapIcons = base.Config.Bind<bool>("Features", "Minimap Icons", true, "Show detected enemies on the minimap.");
 			UpdateMapPatch.allowAdditionalZoom = base.Config.Bind<bool>("Features", "Additional Zoom", true, "Lets you zoom in two additional steps on the minimap.");
 			FixedUpdatePatch.keyBind = base.Config.Bind<string>("Features", "Custom Keybind", "" , "For if you really don't like pressing C while crouching. Change the bind to something else. If you want to use a mouse key, include a space: mouse 3, for example. Valid inputs: https://docs.unity3d.com/ScriptReference/KeyCode.html");
+			FixedUpdatePatch.customMessage = base.Config.Bind<string>("Features", "Custom Message", "", "Set a custom message if you'd like. Example: Detected # enemies. (# will be replaced with the number of dudes detected.");
+			FixedUpdatePatch.messageColor = base.Config.Bind<string>("Adjustments", "Message Color", "#bbddff", "Customize the color of the message with a hex code.");
 			harmony.PatchAll();
 		}
 
